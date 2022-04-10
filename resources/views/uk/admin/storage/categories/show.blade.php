@@ -8,7 +8,7 @@
                 {{ csrf_field() }}
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title mt-0" id="myModalLabel">Корегування транзакції</h5>
+                        <h5 class="modal-title mt-0" id="myModalLabel">Створення категорії товарів</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -25,7 +25,7 @@
                             <select id="parent" name="parent" class="form-control{{ $errors->has('parent') ? 'is-invalid': '' }}">
                                 <option value=""></option>
                                 @foreach($parents as $parent)
-                                    <option value="{{ $parent->id }}"{{ $parent->id === old('parent')? 'selected': '' }}>
+                                    <option value="{{ $parent->id }}"{{ $parent->id === $p->id ? 'selected': '' }}>
                                         @for($i = 0; $i < $parent->depth; $i++) &mdash; @endfor
                                         {{ $parent->name }}
                                     </option>
@@ -324,7 +324,7 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title mt-0" id="myModalLabel">Створити постачальника</h5>
+                                                                    <h5 class="modal-title mt-0" id="myModalLabel">Корегування матеріалу</h5>
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
@@ -404,7 +404,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Закрити</button>
                                                                 </div>
                                                             </div><!-- /.modal-content -->
                                                         </div>
@@ -436,7 +436,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myModalLabel">Створити постачальника</h5>
+                    <h5 class="modal-title mt-0" id="myModalLabel">Створити матеріал</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -516,7 +516,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Закрити</button>
                 </div>
             </div><!-- /.modal-content -->
         </div>
@@ -586,7 +586,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Закрити</button>
                 </div>
             </div><!-- /.modal-content -->
         </div>
@@ -645,7 +645,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Закрити</button>
                 </div>
             </div><!-- /.modal-content -->
         </div>
@@ -724,7 +724,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
                 </div>
             </div>
         </div>
@@ -805,7 +805,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
                         </div>
                     </div>
                 </div>

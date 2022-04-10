@@ -29,8 +29,8 @@ class CategoryController extends Controller
         $providers = Provider::orderBy('id')->get();
         $transactions = MaterialTransaction::orderBy('id')->get();
         $portfolios = Portfolio::orderBy('id')->get();
-        $written_off = MaterialTransaction::orderBy('id')->where('provider_id','!=', null)->sum('sum');
-        $posted = MaterialTransaction::orderBy('id')->where('provider_id', null)->sum('sum');
+        $written_off = MaterialTransaction::orderBy('id')->where('provider_id', null)->where('months', Carbon::now()->month)->sum('sum');
+        $posted = MaterialTransaction::orderBy('id')->where('provider_id', '!=', null)->where('months', Carbon::now()->month)->sum('sum');
         $p = null;
         if($this->url == 'ru'){
             return view('ru.admin.storage.categories.index',compact('categories','parents', 'materials','materials2','sum','transactions','providers','portfolios','written_off','posted'));
